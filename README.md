@@ -1,6 +1,6 @@
 # 10-jul-23-daffaatha
 
-Kalkulaotr BMI
+<strong>Kalkulaotr BMI<strong/>
 
 Berat badan ideal adalah impian semua orang. Tidak hanya memiliki 
 bentuk tubuh yang menunjang penampilan, berat badan ideal juga 
