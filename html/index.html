@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Kalkulator BMI</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <main class="main-content">
+            <section id="home" class="container">
+                <header>
+                    <h1 class="title-header">Kalkulator BMI</h1>
+                    <p class="paragraph">
+                        Berat badan ideal adalah impian semua orang. Tidak hanya memiliki 
+                        bentuk tubuh yang menunjang penampilan, berat badan ideal juga 
+                        menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung 
+                        sekarang di kalkulator BMI.
+                    </p>
+                </header>
+                <div>
+                    <form id="form" class="form" aria-label="Kalkulator BMI">
+                        <div>
+                            <label class="form-label" for="gender">Jenis Kelamin</label>
+                            <div class="input-group">
+                                <input type="radio" name="gender" id="male" value="laki-laki" checked="">
+                                <label for="male">Laki-laki</label>
+                                <input type="radio" name="gender" id="female" value="perempuan">
+                                <label for="female">Perempuan</label>
+                            </div>
+                            <span id="genderErrMessage" class="error-message"></span>
+                        </div>
+                        <div>
+                            <label class="form-label" for="weight">Berat Badan</label>
+                            <div class="input-group">
+                                <input type="number" name="weight" id="weight" class="form-input" min="1" aria-describedby="weightDesc">
+                                <span class="input-group-desc" id="weightDesc">Kg</span>
+                            </div>
+                            <span id="weightErrMessage" class="error-message"></span>
+                        </div>
+                        <div>
+                            <label class="form-label" for="age">Umur</label>
+                            <div class="input-group">
+                                <input type="number" name="age" id="age" class="form-input" min="1" aria-describedby="ageDesc">
+                                <span class="input-group-desc" id="ageDesc">Thn</span>
+                            </div>
+                            <span id="ageErrMessage" class="error-message"></span>
+                        </div>
+                        <div>
+                            <label class="form-label" for="height">Tinggi Badan</label>
+                            <div class="input-group">
+                                <input type="number" name="height" id="height" class="form-input" min="1" aria-describedby="heightDesc">
+                                <span class="input-group-desc" id="heightDesc">Cm</span>
+                            </div>
+                            <span id="heightErrMessage" class="error-message"></span>
+                        </div>
+                        <div>
+                            <button type="button" class="btn" onclick="checkBMI()">Hitung</button>
+                            <button type="reset" class="btn btn-reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="mb-1">
+                    <h2 class="sub-title">Keunggulan fitur</h2>
+                    <ol class="features">
+                        <li>Menghitung berat badan</li>
+                        <li>Menentukan kategori berat badan ideal atau tidak</li>
+                        <li>Mempersiapkan program penurunan berat badan</li>
+                    </ol>
+                </div>
+                <div>
+                    <p class="paragraph mb-1">
+                        Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui 
+                        tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil 
+                        berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti 
+                        dokter.
+                    </p>
+                    <p class="paragraph">
+                        Kalkulator akan memberi anda gambaran tentang perbandingan berat badan anda dengan nilai 
+                        umum. Indek Massa Tubuh (atau BMI) dihitung sebagai berat badan anda (dalam kilogram) 
+                        dibagi dengan kuadrat tinggi badan anda (dalam meter) atau BMI = Kg/M<sup>2</sup>.
+                    </p>
+                </div>
+            </section>
+            <section id="result" class="container d-hidden">
+                <h1 class="title">Hasil</h1>
+                <div class="sub-container mb-1">
+                    <h2 id="result-title" class="result-title"></h2>
+                    <div id="result-bmi" class="result-bmi"></div>
+                    <p id="result-desc" class="result-desc"></p>
+                </div>
+                <div class="mb-1 paragraph">
+                    <p id="result-text"></p>
+                    <p id="suggestion-text"></p>
+                    <p id="advice-text"></p>
+                    <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit 
+                        seseorang, Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait 
+                        dengan berat badan Anda.
+                    </p>
+                </div>
+                <div class="sub-container paragraph">
+                    <h2 id="risk-title"></h2>
+                    <ul id="list-risk" class="list-risk"></ul>
+                </div>
+                <div>
+                    <button class="btn btn-ulang" onclick="regenerateBMI()">Kembali</button>
+                </div>
+            </section>
+        </main>
+        <script src="../js/index.js"></script>
+    </body>
+</html>
